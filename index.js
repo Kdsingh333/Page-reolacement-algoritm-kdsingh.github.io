@@ -91,51 +91,6 @@ function fifo() {
 		}
 	var $table = $("<table border='1'></table>");
 	$table.addClass('table table-striped');
-	$tbody = $("<tbody></tbody>");
-
-	for (i = 0; i < row; i++) {
-		var line = $("<tr></tr>");
-
-
-		for (j = 0; j < col; j++) {
-
-
-			if (i == row - 1) {
-
-
-				if (("PH".localeCompare(pages[i][j]) == 0)) {
-					line.append('<td style="color:green">' + 'PH' + '</td>');
-				} else {
-					line.append('<td style="color:red">' + 'PF' + '</td>');
-				}
-
-				$tbody.append(line);
-
-			} else {
-
-				line.append($("<td ></td>").html(pages[i][j] + ""));
-				
-
-				$tbody.append(line);
-			}
-
-		}
-
-       
-		$table.append($tbody);
-		$table.appendTo($("#div"));
-		$("#sp1").html('<p style="text-align:center">' + "<b>The no of page faults is:</b>" + "   " +
-			'<span style="color:red">' + pf + '</span>' + '</p>')
-		$("#sp2").html('<p style="text-align:center">' + "<b>The no of page hits is:</b>" + "   " +
-			'<span style="color:green">' + ph + '</span>' + '</p>')
-
-
-
-		document.getElementById('bottom1').scrollIntoView();
-		document.getElementById('calcbtn1').disabled = "disabled";
-		document.getElementById("frames1").disabled = true;
-		document.getElementById("rs1").disabled = true;
-
-	}
+	
 
 }
