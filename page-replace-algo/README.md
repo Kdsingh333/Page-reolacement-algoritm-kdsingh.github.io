@@ -1,1 +1,1 @@
-This Prjoct about Page replacement algorithm visulization 
+This Project about Page replacement algorithm visulization 
