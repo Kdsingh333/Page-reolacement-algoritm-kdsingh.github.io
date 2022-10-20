@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About FIFO</title>
+  <!-- # bootstrap  -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+    integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous" />
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="FIFO.css" />
+  <link rel="icon" href="images/simulation.png" type="image/x-icon">
+  <!-- font awesome href -->
+  <script src="https://kit.fontawesome.com/fd9f6608c3.js" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+  <section class="container-fluid" style="margin:0px; padding: 0px;">
+    <nav class="navbar bg-dark navbar-expand-lg navbar-dark">
+      <a class="navbar-brand" href="">FIFO (first In first Out)</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="">Introduction</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="">Advantage</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="">Disadvantage</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <div class="Introduction">
+      <h2>Introduction</h2>
+      <p> This is the simplest page replacement algorithm. In this algorithm, the operating system keeps track of all
+        pages in the memory in a queue, the oldest page is in the front of the queue. When a page needs to be replaced
+        page in the front of the queue is selected for removal. </p>
+    </div>
+    <div>
+
+    </div>
+
+
+
+    <!-- Advantage -->
+    <section class="Advantage">
+      <h2>Advantage</h2>
+      <ul>
+        <li>It is simple and easy to understand & implement.</li>
+        <li>It is efficiently used for small systems</li>
+        <li>It does not cause more overheads</li>
+      </ul>
+    </section>
+
+    <!-- Disadvantage -->
+    <section class="disadvantage">
+      <h2>Disadvantage</h2>
+      <div>
+        <ul>
+          <li>The process effectiveness is low.</li>
+          <li>When we increase the number of frames while using FIFO, we are giving more memory to processes. So, page
+            fault should decrease, but here the page faults are increasing. This problem is called as Belady’s Anomaly.
+          </li>
+          <li>Every frame needs to be taken account off.</li>
+          <li>It uses an additional data structure</li>
+        </ul>
+
+      </div>
+    </section>
+
+    <!-- Button -->
+    <button type="button" class=" dropbtn btn btn-dark btn-lg downlode-button">
+      <i class="fas fa-play"></i> <a href="FIFOSIM.html">Simulation</a>
+    </button>
+    <!-- Footer -->
+
+    <footer id="footer">
+      <i class=" ic fa fa-twitter"></i>
+      <i class=" ic fa fa-instagram"></i>
+      <i class=" ic fa fa-facebook-square"></i>
+      <i class=" ic fa fa-link"></i>
+      <p>© Kuldeep Singh 2022 </p>
+    </footer>
+  </section>
+
+</body>
+
+</html>

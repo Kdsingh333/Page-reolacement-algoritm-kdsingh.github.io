@@ -1,0 +1,22 @@
+body {
+    font-family: "Montserrat";
+    text-align: center;
+
+}
+
+.centered {
+    font-size: 50px;
+    text-align: center;
+    font-family:"Montserrat" ;
+}
+.input{
+    margin-right:  100px;;
+    width: 20%;
+}
+.spacing{
+    margin: 40px 20px 0px;
+    
+}
+.resetbtn{
+    margin-top: 8%;
+}

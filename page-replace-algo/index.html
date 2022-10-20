@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <title>Page-replacement-algo</title>
+
+  <!-- # bootstrap  -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+    integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous" />
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
+  <!-- # css style -->
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="icon" href="images/logo1.png" type="x-icon">
+  <!-- # googlefont -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap" rel="stylesheet" />
+
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500&display=swap" rel="stylesheet" />
+  <!-- font awesome href -->
+  <script src="https://kit.fontawesome.com/fd9f6608c3.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <section id="title">
+    <div class="container-fluid">
+      <nav class="navbar navbar-expand-lg navbar-dark">
+        <a class="navbar-brand" href="#">Operating System</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ml-auto">
+            <li class="navbar-item">
+              <a class="nav-link" href="#text-row">Introduction</a>
+            </li>
+
+            <li class="navbar-item">
+              <a class="nav-link" href="#Algorithm">Algorithms</a>
+            </li>
+
+            <li class="navbar-item">
+              <a class="nav-link" href="#footer">About Us </a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+      <div class="row">
+        <div class="col-lg-6">
+          <h1 class="big-heading">Page Replacement Algorithms</h1>
+
+          <div class="dropdown">
+            <button type="button" class=" dropbtn btn btn-dark btn-lg downlode-button">
+              <i class="fas fa-play"></i> Simulation
+            </button>
+            <div class="dropdown-content">
+              <a href="FIFO/FIFOSIM.html">FIFO</a>
+              <a href="#">OPR</a>
+              <a href="#">LIFO</a>
+              <a href="#">LRU </a>
+            </div>
+          </div>
+
+        </div>
+        <div class="col-lg-6">
+          <img class="title-img" src="images/simulation.png" alt="simulation-logo" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- terminology -->
+
+  <section id="text-row">
+    <h2 class="Terminology">Terminology</h2>
+    <div class="about-row row">
+      <div class="col-lg-6 col-md-12">
+        <img class="page-hit" src="images/f1.png" alt="">
+      </div>
+      <div class="col-lg-6 col-md-12">
+        <h3>Page Hit and Page fault</h3>
+        <p class="about-para">In a computer operating system that uses paging for virtual memory management, page
+          replacement algorithms
+          decide which memory pages to page out, sometimes called swap out, or write to disk, when a page of memory
+          needs
+          to be allocated. Page replacement happens when a requested page is not in memory (page fault) and a free page
+          cannot be used to satisfy the allocation, either because there are none, or because the number of free pages
+          is
+          lower than some threshold.</p>
+      </div>
+    </div>
+    <div class="about-row row">
+      <div class="col-lg-6 col-md-12">
+        <h3>Page Replacement Algorithms</h3>
+        <p class="about-para">When the page that was selected for replacement and paged out is referenced again it has
+          to
+          be paged in (read in from disk), and this involves waiting for I/O completion. This determines the quality of
+          the page replacement algorithm: the less time waiting for page-ins, the better the algorithm. A page
+          replacement
+          algorithm looks at the limited information about accesses to the pages provided by hardware, and tries to
+          guess
+          which pages should be replaced to minimize the total number of page misses, while balancing this with the
+          costs
+          (primary storage and processor time) of the algorithm itself.
+        </p>
+      </div>
+      <div class="col-lg-6 col-md-12">
+        <img class="PageType-img" src="images/f2.png" alt="">
+      </div>
+    </div>
+
+
+
+  </section>
+
+
+
+  <!-- Algorithm Card-->
+  <section id="Algorithm">
+
+    <h2 class="section-heading">Various Page Replacement Algorithms</h2>
+    <p></p>
+
+    <div class="row">
+      <div class=" zoom Algo-coloum col-lg-3 col-md-6">
+        <div class="card">
+          <div class="card-header">
+            <h3>FIFO</h3>
+          </div>
+
+          <div class="card-body">
+
+            <p>First In First Out Page</p>
+            <p>Replacement Algorithm</p>
+
+            <button type="button" class="btn-block btn-outline-dark"><a class="Read-more1" href="FIFO/FIFO.html">READ
+                MORE</a> </button>
+          </div>
+
+        </div>
+      </div>
+
+      <div class=" zoom Algo-coloum  col-lg-3 col-md-6">
+        <div class="card ">
+          <div class="card-header">
+            <h3>OPR</h3>
+          </div>
+          <div class="card-body">
+            <p>Optimal Page</p>
+            <p>Replacement Algorithm</p>
+
+            <button type="button" class="btn-block btn-dark"><a class="Read-more" href="FIFO.html">READ
+                MORE</a></button>
+
+          </div>
+        </div>
+      </div>
+
+      <div class=" zoom Algo-coloum  col-lg-3 col-md-6">
+        <div class="card">
+          <div class="card-header">
+            <h3>LIFO</h3>
+          </div>
+          <div class="card-body">
+
+            <p>Last In First Out Page</p>
+            <p>Replacement Algorithm</p>
+
+            <button type="button" class="btn-block btn-dark"><a class="Read-more" href="FIFO.html">READ
+                MORE</a></button></h3>
+
+          </div>
+        </div>
+      </div>
+      <div class=" zoom Algo-coloum  col-lg-3 col-md-6">
+        <div class="card">
+          <div class="card-header">
+            <h3>LRU</h3>
+          </div>
+          <div class="card-body">
+
+            <p>Least Recently Used Page </p>
+            <p>Replacement Algorithm</p>
+            <button type="button" class="btn-block btn-dark"><a class="Read-more" href="FIFO.html">READ
+                MORE</a></button></h3>
+
+          </div>
+        </div>
+      </div>
+
+
+  </section>
+
+
+
+
+  <!-- Footer -->
+
+  <footer id="footer">
+    <i class=" ic fa fa-twitter"></i>
+    <i class=" ic fa fa-instagram"></i>
+    <i class=" ic fa fa-facebook-square"></i>
+    <i class="ic fa fa-link"></i>
+    <p>© Kuldeep Singh 2022 </p>
+
+  </footer>
+
+
+</body>
+
+</html>
