@@ -77,20 +77,218 @@ function fifo() {
 		}
 	}
 
-	 for(i=0; i<rs.length; i++){
+	for (i = 0; i < rs.length; i++) {
 		console.log(rs[i]);
-	 }
+	}
 
-	 console.log("\n");
-        for(i=0; i<col; i++){
-			for(j=0 ; j<row; j++){
-				console.log(pages[j][i]);
-				
-			}
-			console.log("\n");
+	console.log("\n");
+	for (i = 0; i < col; i++) {
+		for (j = 0; j < row; j++) {
+			console.log(pages[j][i]);
+
 		}
-	var $table = $("<table border='1'></table>");
-	$table.addClass('table table-striped');
-	
+		console.log("\n");
+	}
+
+
+
+	// 	function showString() {
+	// 		var Table = $("<table border='1'></table>");
+	// 		Table.addClass('table table-striped');
+	// 		var Tbody = $("<tbody></tbody>");
+	// 		var row = $('<tr></tr>');
+
+	// 		for (k = 0; k < rs.length; k++) {
+	// 			row.append($('<th></th>', { id: "header" }).html(rs[k] + ""));
+
+
+	// 		}
+
+	// 		Tbody.append(row);
+	// 		Table.append(Tbody);
+
+	// 		Table.appendTo($("#div"))
+	// 	}
+
+
+	//    function showData(){
+
+
+	// 	var $table = $("<table border='1'></table>");
+	// 	$table.addClass('table table-striped');
+	// 	Tbody = $("<tbody></tbody>");
+
+	// 	for (i = 0; i < row; i++) {
+	// 		var line = $("<tr></tr>");
+
+
+	// 		for (j = 0; j < col; j++) {
+
+
+	// 			if (i == row - 1) {
+
+
+	// 				if (("PH".localeCompare(pages[i][j]) == 0)) {
+	// 					line.append('<td style="color:green">' + 'PH' + '</td>');
+	// 				} else {
+	// 					line.append('<td style="color:red">' + 'PF' + '</td>');
+	// 				}
+
+	// 				Tbody.append(line);
+
+	// 			} else {
+
+	// 				line.append($("<td ></td>").html(pages[i][j] + ""));
+
+
+	// 				Tbody.append(line);
+	// 			}
+
+	// 		}
+
+
+	// 		$table.append($tbody);
+	// 		$table.appendTo($("#div"));
+	// 		$("#sp1").html('<p style="text-align:center">' + "<b>The no of page faults is:</b>" + "   " +
+	// 			'<span style="color:red">' + pf + '</span>' + '</p>')
+	// 		$("#sp2").html('<p style="text-align:center">' + "<b>The no of page hits is:</b>" + "   " +
+	// 			'<span style="color:green">' + ph + '</span>' + '</p>')
+	// 		}
+
+	//          showString();
+
+
+
+
+
+	for (i = 0; i <= rs.length; i++) {
+		if (i == 0) {
+			var table = document.createElement('table');
+			table.classList.add("table", "flex-container");
+			var tbody = document.createElement('tbody');
+			tbody.classList.add("tablenum" + [i], "sizing");
+
+			var row1 = document.createElement('tr');
+			var data = document.createElement('th');
+			data.classList.add("header-color");
+			var text = document.createTextNode("String");
+			text
+			data.appendChild(text);
+			row1.appendChild(data);
+			tbody.append(row1);
+			table.append(tbody);
+			document.getElementById("div").append(table);
+		}
+		else {
+
+
+			var table = document.createElement('table');
+			table.classList.add("table", "flex-container");
+			var tbody = document.createElement('tbody');
+			tbody.classList.add("tablenum" + [i]);
+
+			var row1 = document.createElement('tr');
+			var data = document.createElement('th');
+			data.classList.add("header-color");
+			var text = document.createTextNode(`${rs[i - 1]}`);
+			data.appendChild(text);
+			row1.appendChild(data);
+			tbody.append(row1);
+			table.append(tbody);
+			document.getElementById("div").append(table);
+		}
+	}
+
+
+
+
+	for (i = 0; i <= col; i++) {
+
+		if (i == 0) {
+
+			for (var j = 0; j < row; j++) {
+				if (j == row - 1) {
+					var row3 = document.createElement('tr');
+
+					var column = document.createElement('td');
+
+					var text = document.createTextNode("Result");
+					column.appendChild(text);
+					row3.appendChild(column);
+					document.getElementsByClassName("tablenum" + [i])[0].append(row3)
+				}
+				else {
+					var row3 = document.createElement('tr');
+
+					var column = document.createElement('td');
+
+					var text = document.createTextNode("FRM " + [j + 1]);
+					column.appendChild(text);
+					row3.appendChild(column);
+					document.getElementsByClassName("tablenum" + [i])[0].append(row3)
+				}
+			}
+		}
+		else {
+			for (var j = 0; j < row; j++) {
+				var row3 = document.createElement('tr');
+
+				var column = document.createElement('td');
+
+				var text = document.createTextNode(`${pages[j][i - 1]}`);
+				column.appendChild(text);
+				row3.appendChild(column);
+				document.getElementsByClassName("tablenum" + [i])[0].append(row3)
+			}
+		}
+
+		// millisecondsToWait = 500; 
+		// setTimeout(function() { 
+
+		// }, millisecondsToWait); 
+
+
+	}
+
+	// for (var i = 0; i < row; i++) {
+	// 	var row3 = document.createElement('tr');
+	// 	for (var j = 0; j < 1; j++) {
+	// 		var column = document.createElement('td');
+	// 		var text = document.createTextNode(`${pages[i][j]} `);
+	// 		column.appendChild(text);
+	// 		row3.appendChild(column);
+
+	// 	}
+	// 	tbody.appendChild(row3);
+
+
+	// }
+	// for (var i = 0; i < row; i++) {
+	// 	var row3 = document.createElement('tr');
+	// 	for (var j = 1; j < 2; j++) {
+	// 		var column = document.createElement('td');
+	// 		var text = document.createTextNode(`${pages[i][j]} `);
+	// 		column.appendChild(text);
+	// 		row3.appendChild(column);
+
+	// 	}
+	// 	tbody.appendChild(row3);
+
+
+	// }
+	// table.append(tbody);
+	// table.setAttribute("border", "2");
+	// document.getElementById("div").append(table);
+
+
+
+	document.getElementById('bottom1').scrollIntoView();
+	document.getElementById('calcbtn1').disabled = "disabled";
+	document.getElementById("frames1").disabled = true;
+	document.getElementById("rs1").disabled = true;
+
+
+
+
 
 }

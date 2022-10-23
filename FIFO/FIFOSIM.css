@@ -7,16 +7,38 @@ body {
 .centered {
     font-size: 50px;
     text-align: center;
-    font-family:"Montserrat" ;
+    font-family: "Montserrat";
 }
-.input{
-    margin-right:  100px;;
+
+.input {
+    margin-right: 100px;
+    ;
     width: 20%;
 }
-.spacing{
-    margin: 40px 20px 0px;
-    
+
+.spacing {
+
+    padding: 7%;
+
 }
-.resetbtn{
+
+.resetbtn {
     margin-top: 8%;
+}
+
+.flex-container {
+    display: flex;
+    padding: 0.16%;
+    margin-top: 30px;
+    
+
+
+}
+
+.header-color {
+    background-color: skyblue;
+    color: white;
+}
+.sizing{
+    margin-left: 20px;
 }
