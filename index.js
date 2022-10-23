@@ -7,7 +7,7 @@ var f;
 var rs;
 var txt;
 
-function fifo() {
+async function fifo() {
 	f = document.getElementById("frames1").value;
 	rs = document.getElementById("rs1").value;
 	var isnum = /^\d+$/.test(rs);
@@ -199,7 +199,9 @@ function fifo() {
 		}
 	}
 
-
+	function sleep(ms) {
+		return new Promise(resolve => setTimeout(resolve, ms));
+	}
 
 
 	for (i = 0; i <= col; i++) {
@@ -225,7 +227,7 @@ function fifo() {
 					var text = document.createTextNode("FRM " + [j + 1]);
 					column.appendChild(text);
 					row3.appendChild(column);
-					document.getElementsByClassName("tablenum" + [i])[0].append(row3)
+					document.getElementsByClassName("tablenum" + [i])[0].append(row3);
 				}
 			}
 		}
@@ -238,47 +240,21 @@ function fifo() {
 				var text = document.createTextNode(`${pages[j][i - 1]}`);
 				column.appendChild(text);
 				row3.appendChild(column);
+				await sleep(500)
 				document.getElementsByClassName("tablenum" + [i])[0].append(row3)
 			}
 		}
 
-		// millisecondsToWait = 500; 
-		// setTimeout(function() { 
 
-		// }, millisecondsToWait); 
 
 
 	}
 
-	// for (var i = 0; i < row; i++) {
-	// 	var row3 = document.createElement('tr');
-	// 	for (var j = 0; j < 1; j++) {
-	// 		var column = document.createElement('td');
-	// 		var text = document.createTextNode(`${pages[i][j]} `);
-	// 		column.appendChild(text);
-	// 		row3.appendChild(column);
+	$("#sp1").html('<p style="text-align:center">' + "<b>The no of page faults is:</b>" + "   " +
+		'<span style="color:red">' + pf + '</span>' + '</p>')
+	$("#sp2").html('<p style="text-align:center">' + "<b>The no of page hits is:</b>" + "   " +
+		'<span style="color:green">' + ph + '</span>' + '</p>')
 
-	// 	}
-	// 	tbody.appendChild(row3);
-
-
-	// }
-	// for (var i = 0; i < row; i++) {
-	// 	var row3 = document.createElement('tr');
-	// 	for (var j = 1; j < 2; j++) {
-	// 		var column = document.createElement('td');
-	// 		var text = document.createTextNode(`${pages[i][j]} `);
-	// 		column.appendChild(text);
-	// 		row3.appendChild(column);
-
-	// 	}
-	// 	tbody.appendChild(row3);
-
-
-	// }
-	// table.append(tbody);
-	// table.setAttribute("border", "2");
-	// document.getElementById("div").append(table);
 
 
 
