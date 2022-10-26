@@ -208,6 +208,8 @@ async function mru() {
 		$("#sp2").html('<p style="text-align:center;  font-size:20px">' + "<b>THE NO OF PAGE HIT IS:</b>" + "   " +
 			'<span style="color:green">' + ph + '</span>' + '</p>' + '<br>' + '<p style="text-align:center; font-size:20px">' + "<b>THE PAGE HIT PECENTAGE IS:</b>" + "   " +
 			'<span style="color:green">' + Math.floor((ph / (pf + ph)) * 100) + "%" + '</span>' + '</p>')
+	}else {
+		alert("Please Choose Page hit or page fault in 3rd input box to see Calculation");
 	}
 	document.getElementById('bottom1').scrollIntoView();
 

@@ -25,6 +25,14 @@ td {
     top: 50px;
     left: 10px;
 }
+@media (max-width:1022px) {
+  
+
+    .res{
+        margin-bottom: 30px;
+        margin-left: 60px;
+    }
+}
 
 
 
