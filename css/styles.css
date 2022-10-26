@@ -158,22 +158,16 @@ p {
     padding: 3% 2%;
 }
 
-.Read-more1{
-    color: black;
-    decoration:none;
-}
+
 .Read-more{
     color: white;
-    decoration:none;
+    text-decoration:none;
 }
 .Read-more:hover{
     color: white;
-    decoration:none;
+    text-decoration:none;
 }
-.Read-more1:hover{
-    color: white;
-    decoration:none;
-}
+
 
 
 
