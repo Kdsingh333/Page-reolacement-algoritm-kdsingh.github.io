@@ -1,1 +1,1 @@
-# Page-replacement-algoritm-kdsingh
+# Page-replacement-algorithm-kdsingh
