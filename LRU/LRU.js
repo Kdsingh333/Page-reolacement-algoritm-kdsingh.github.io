@@ -1,4 +1,3 @@
-
 var count = 0;
 var pages = [];
 var pf;
@@ -7,7 +6,7 @@ var f;
 var rs;
 var txt;
 
-async function fifo() {
+async function lru() {
 	f = document.getElementById("frames1").value;
 	rs = document.getElementById("rs1").value;
 	var isnum = /^\d+$/.test(rs);
@@ -26,8 +25,10 @@ async function fifo() {
 	pf = 0;
 	ph = 0;
 	var k = 0;
-	var i, row = Number(f) + 1,
-		j, col = rs.length;
+	var l;
+	var least;
+	var index;
+	var i, row = Number(f) + 1, j, col = rs.length;
 
 	pages = new Array(row);
 	for (i = 0; i < row; i++)
@@ -45,11 +46,9 @@ async function fifo() {
 			for (i = 0; i < row - 1; i++)
 				pages[i][j] = pages[i][j - 1];
 		}
-		if (j > 0) {
-			for (i = 0; i < row - 1; i++) {
-				if (rs[k] == pages[i][j])
-					flag = true;
-			}
+		for (i = 0; i < row - 1; i++) {
+			if (rs[k] == pages[i][j])
+				flag = true;
 		}
 		if (flag == false) {
 			for (i = 0; i < row - 1; i++) {
@@ -60,37 +59,42 @@ async function fifo() {
 			}
 			if (smallest != -1) {
 				pages[smallest][j] = rs[k];
-				prev = (smallest + 1) % (row - 1);
-			} else {
-				pages[prev][j] = rs[k];
-				prev = (prev + 1) % (row - 1);
+			}
+			else {
+				index = 9999;
+				for (i = 0; i < row - 1; i++) {
+					for (l = j - 1; l >= 0; l--) {
+						if (pages[i][j] == rs[l]) {
+							least = l;
+							break;
+						}
+
+					}
+					if (index > least)
+						index = least;
+
+				}
+
+				for (i = 0; i < row - 1; i++) {
+					if (pages[i][j] == rs[index])
+						break;
+				}
+
+				pages[i][j] = rs[k];
 			}
 			pages[row - 1][j] = "PF";
 			k++;
 			pf++;
 			console.log("pf=", pf);
-		} else {
+		}
+		else {
 			ph++;
 			k++;
 			console.log("ph=", ph);
 			pages[row - 1][j] = "PH";
 		}
 	}
-
-	for (i = 0; i < rs.length; i++) {
-		console.log(rs[i]);
-	}
-
-	console.log("\n");
-	for (i = 0; i < col; i++) {
-		for (j = 0; j < row; j++) {
-			console.log(pages[j][i]);
-
-		}
-		console.log("\n");
-	}
-
-	document.getElementById("Abbre").style.display = "block";
+    document.getElementById("Abbre").style.display = "block";
 
 	for (i = 0; i <= rs.length; i++) {
 		if (i == 0) {
@@ -205,5 +209,4 @@ async function fifo() {
 			'<span style="color:green">' + Math.floor((ph / (pf + ph)) * 100) + "%" + '</span>' + '</p>')
 	}
 	document.getElementById('bottom1').scrollIntoView();
-
 }

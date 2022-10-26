@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <link href="bootstrap.min.css" rel="stylesheet">
-<link rel="stylesheet" href="FIFOSIM.css">
+<link rel="stylesheet" href="MRU.css">
 <link rel="icon" href="../images/simulation.png" type="x-icon">
 <head>
     <title>Page Replacement</title>
@@ -43,7 +43,7 @@
                         style='font-size:30px; color:#6c757d'> Home</i></a>
             </div>
             <div class="centered col-lg-8">
-                <p>First-In First-Out</p>
+                <p>Most Recently Used Page</p>
             </div>
         </div>
         <br>
@@ -70,7 +70,7 @@
                 </div>
                 <br>
                 <div class=" col-lg-6 ">
-                    <input type="button" id="calcbtn1" class=" btn btn-outline-dark " onclick="fifo()"
+                    <input type="button" id="calcbtn1" class=" btn btn-outline-dark " onclick="mru()"
                         value="Simulate"><br>
                 </div>
                 <div class="col-lg-6 resetbtn">
@@ -109,7 +109,7 @@
     crossorigin="anonymous"></script>
 <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
 <!-- <script src="ind1.js"></script> -->
-<script src="../index.js">
+<script src="MRU.js">
 
 </script>
 
