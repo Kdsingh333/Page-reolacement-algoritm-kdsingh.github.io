@@ -11,8 +11,26 @@ td {
 .centered {
     margin-top: 30px;
     font-size: 50px;
-    
+
     font-family: "Montserrat";
+}
+
+.heading {
+    position: relative;
+    right: 10px;
+    text-decoration: underline;
+    width: 900px;
+    font-size: 40px;
+}
+
+@media (max-width:990px) {
+    .heading {
+        width: 400px;
+        left: 20px;
+        text-decoration: underline;
+      
+        font-size: 40px;
+    }
 }
 
 .input {
@@ -25,10 +43,11 @@ td {
     top: 50px;
     left: 10px;
 }
-@media (max-width:1022px) {
-  
 
-    .res{
+@media (max-width:1022px) {
+
+
+    .res {
         margin-bottom: 30px;
         margin-left: 60px;
     }
@@ -82,8 +101,9 @@ td {
     transition: border-color .15s
 }
 
-.Abbre{
-    margin-top: 60px;
+#Abbre {
+    margin-top: 50px;
+    margin-left: 50px;
     display: relative;
     top: 60px;
     left: 50px;
@@ -96,8 +116,16 @@ td {
     font-style: bold;
     border: 1px;
     border-radius: 0.25rem;
-    background-color: #3D8361;
-    color: white;
+    background-color: #EEF2E6;
+    color: black;
 
+
+}
+
+@media (max-width:600px) {
+    .abbre {
+        background-color: #EEF2E6;
+        font-size: 15px;
+    }
 
 }

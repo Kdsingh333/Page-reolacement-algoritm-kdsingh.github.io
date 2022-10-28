@@ -14,6 +14,22 @@ td {
     
     font-family: "Montserrat";
 }
+.heading{
+    position: relative;
+    right: 50px;
+    text-decoration: underline;
+    width: 900px;
+    font-size: 40px;
+}
+@media (max-width:990px) {
+    .heading {
+        width: 400px;
+        left: 20px;
+        text-decoration: underline;
+        
+        font-size: 40px;
+    }
+}
 
 .input {
     margin-right: 100px;
@@ -81,6 +97,13 @@ td {
     border-radius: 0.25rem;
     transition: border-color .15s
 }
+#Abbre{
+    margin-top: 50px;
+    margin-left: 50px;
+    display: relative;
+    top: 60px;
+    left: 50px;
+}
 
 .abbre {
     margin-left: 0%;
@@ -89,8 +112,16 @@ td {
     font-style: bold;
     border: 1px;
     border-radius: 0.25rem;
-    background-color: #3D8361;
-    color: white;
+    background-color: #EEF2E6;
+    color: black;
 
 
+}
+
+@media (max-width:600px) {
+    .abbre{
+        background-color: #EEF2E6;
+       font-size: 15px;
+    }
+    
 }
