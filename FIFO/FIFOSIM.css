@@ -1,11 +1,7 @@
 body {
     font-family: "Montserrat";
     text-align: center;
-    
 
-}
-#fif{
-    background-color: #EAF6F6
 }
 
 td {
@@ -32,7 +28,7 @@ td {
         width: 400px;
         left: 20px;
         text-decoration: underline;
-
+      
         font-size: 40px;
     }
 }
