@@ -82,6 +82,10 @@ td {
     margin-bottom: 3px;
 }
 
+.tdspacing{
+    width :50px;
+}
+
 .sizing {
     margin-left: 20px;
 }

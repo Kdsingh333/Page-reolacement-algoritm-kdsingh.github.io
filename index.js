@@ -120,8 +120,8 @@ async function fifo() {
 
 			var row1 = document.createElement('tr');
 			var data = document.createElement('th');
-			data.classList.add("header-color");
-			var text = document.createTextNode(`${rs[i - 1]}`);
+			data.classList.add("header-color","tdspacing");
+			var text = document.createTextNode(" "+`${rs[i - 1]}`);
 			data.appendChild(text);
 			row1.appendChild(data);
 			tbody.append(row1);
@@ -173,9 +173,11 @@ async function fifo() {
 				var row3 = document.createElement('tr');
 
 				var column = document.createElement('td');
-				column.setAttribute("border", "2px")
+				column.setAttribute("border", "2px");
+				column.classList.add("tdspacing");
+				
 
-				var text = document.createTextNode(`${pages[j][i - 1]}`);
+				var text = document.createTextNode(" "+`${pages[j][i - 1]}`);
 				column.appendChild(text);
 				row3.appendChild(column);
 				await sleep(400)
